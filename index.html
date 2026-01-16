@@ -8,7 +8,23 @@
 </head>
 <body>
     <script>
-        console.log("hello world");
+        /*
+        Step 2: Write logic to get the computer choice
+        CREATE new function named getComputerChoice
+        INIT Math.random method
+        RETURN string values "rock", "paper", "scissors"
+
+        */
+        function getComputerChoice(){
+            let value = Math.floor(Math.random() * 3);
+            return value == 1 ? "rock"
+            : value == 2 ? "paper"
+            : "scissors";
+        }
+        
+
+
+        
     </script>
 </body>
 </html>
