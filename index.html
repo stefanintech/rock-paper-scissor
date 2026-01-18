@@ -24,38 +24,70 @@
             return choice
         }
         
-        function playRound(humanChoice, computerChoice) {
-            let h = humanChoice.toLowerCase();
-            let c = computerChoice;
+        function playGame(){
 
-            if (h === c) {
-                // tie condition
-                console.log(`This is a tie! You both chose ${h}`)
-            } else if (
-                // winning conditions
-                (h === 'rock' && c   === 'scissors') ||
-                (h === 'paper' && c === 'rock') ||
-                (h === 'scissors' && c === 'paper')
-            ) {
-                //human won
-                humanScore++
-                console.log(`You win! ${h} beats ${c}`)
-                console.log(`Human score: ${humanScore}, Computer score: ${computerScore}`)
+
+            function playRound(humanChoice, computerChoice) {
+                let h = humanChoice.toLowerCase();
+                let c = computerChoice;
+    
+                if (h === c) {
+                    // tie condition
+                    console.log(`This is a tie! You both chose ${h}`)
+                } else if (
+                    // winning conditions
+                    (h === 'rock' && c   === 'scissors') ||
+                    (h === 'paper' && c === 'rock') ||
+                    (h === 'scissors' && c === 'paper')
+                ) {
+                    //human won
+                    humanScore++
+                    console.log(`You win! ${h} beats ${c}`)
+                    console.log(`Human score: ${humanScore}, Computer score: ${computerScore}`)
+                }
+    
+                else {
+                    computerScore++
+                    console.log(`You lose! ${c} beats ${h}`)
+                    console.log(`Human score: ${humanScore}, Computer score: ${computerScore}`)
+                }
+    
+                
             }
 
-            else {
-                computerScore++
-                console.log(`You lose! ${c} beats ${h}`)
-                console.log(`Human score: ${humanScore}, Computer score: ${computerScore}`)
-            }
+            console.log('round 1')
+            
+            const humanSelection1 = getHumanChoice();
+            const computerSelection1 = getComputerChoice();
+            playRound(humanSelection1, computerSelection1);
 
+            console.log('round 2')
+            const humanSelection2 = getHumanChoice();
+            const computerSelection2 = getComputerChoice();
+            playRound(humanSelection2, computerSelection2);
+
+            console.log('round 3')
+            const humanSelection3 = getHumanChoice();
+            const computerSelection3 = getComputerChoice();            
+            playRound(humanSelection3, computerSelection3);
+
+            console.log('round 4')
+            const humanSelection4 = getHumanChoice();
+            const computerSelection4 = getComputerChoice();
+            playRound(humanSelection4, computerSelection4);
+
+            console.log('round 5')
+            const humanSelection5 = getHumanChoice();
+            const computerSelection5 = getComputerChoice();
+            playRound(humanSelection5, computerSelection5);
+
+            console.log('game over')
+            console.log(`final score: human ${humanScore} - computer ${computerScore}`)
 
         }
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        playGame();
 
-        playRound(humanSelection, computerSelection);
 
         
     </script>
